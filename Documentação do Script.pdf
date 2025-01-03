@@ -1,0 +1,72 @@
+
+
+ 
+CNPJ: 05.220.925/0020-24
+RAZÃO SOCIAL: TRANSPORTES TRANSVIDAL SA
+NOME FANTASIA: TRANSVIDAL 
+SETOR: SETOR DE OPERAÇÕES
+
+Robson Dariva Diniz
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MANUAL UTILIZAR SCRIPT DE ENVIO DE MENSAGENS DA PLANILHA "REFORÇO COM AGÊNCIA"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Erechim-RS 
+
+
+Introdução
+
+O código automatiza a interação entre uma planilha do Google Sheets e o WhatsApp Web, que era feito de forma manual, com isso em vista teriamos mais tempo para outras demandas. 
+
+
+Instalando dependencias:
+
+Passo 1: Primeiramente vamos precisar instalar o Python 3.1, pode ser instalado diretamente pelo CMD através do comando "winget install python", irá puxar o download diretamente pelo site oficial da linguagem Python.
+
+Passo 2:  Após feito isso o ambiente base vai estar rodando na maquina, em seguida precisamos instalar a dependencia "pywhatkit openpyxl" (link no final deste passo para conhecer a ferramenta caso tenham interesse), o comando para instalar essa dependencia seria o "pip install pywhatkit" 
+
+(https://pypi.org/project/pywhatkit/#:~:text=pywhatkit%205.4&text=PyWhatKit%20is%20a%20Python%20library,new%20features%20and%20bug%20fixes.
+
+Passo 3: Com as dependencias instaladas vamos passar agora para como funciona o Script em si.
+
+
+Como funciona ?
+
+API com Google Sheets :  Ele puxa as informações das planilhas que geramos pelo  CRM, que estão indexadas no Google Sheets, para fazer isso precisaria do arquivo JSON e da auth com o Drive, até ser aprovado ou afins fiz uma provisoria na conta do monitoramento que está sendo utilizada para testes, segue link em anexo; https://docs.google.com/spreadsheets/d/1E-uNmEKWWmsL4J40lIjXUqV-KLk91CHde5Fh6r48Zw0/edit?usp=sharing
+	Tendo em vista como funciona a integração com o API e Google Sheets, o script pega os campos que eram utilizados para gerar as mensagens pelas células da planilha nas Células, linha["Motorista"], linha["Placa Cavalo"], linha["Agência"], linha["Agenciador"] e forma a mensagem que era encaminhada copiando e colando nos grupos de WhatsApp;
+
+"Olá "&E27&" de "&C27&", gentileza orientar condutor "&A27&" da placa "&B27&" sobre nosso processo. Ordem foi entregue em mãos? Podemos confirmar?"
+
+	Fazendo este envio de forma automatica.
+
+Oque poderia melhorar ? 
+
+Desenvolvimento de um filtro:  Um filtro 
+
